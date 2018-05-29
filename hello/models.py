@@ -16,3 +16,11 @@ class Flight(models.Model):
 
 	def __str__(self):
 		return "id: {} - From {} to {}. Duration:{}".format(self.id, self.origin, self.destination, self.duration)
+
+class Passenger(models.Model):
+	first = models.CharField(max_length=64)
+	last = models.CharField(max_length=64)
+	flights = models.ManyToManyField(Flight, blank=True, related_name='passenger')
+
+	def __str__(self):
+		return "{} {}".format(self.first, self.last)
