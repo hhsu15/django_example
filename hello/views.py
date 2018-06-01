@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth import authenticate, login, logout
 from .models import Airport, Flight, Passenger
 # Create your views here.
 
@@ -45,3 +46,32 @@ def book(request, flight_id):
 	# redirect to the route named flight (in the urls.py)
     # also pass the args as flight_id
 	return HttpResponseRedirect(reverse("flight", args=(flight_id)))
+
+
+#------------login------------
+# create login functionatities
+
+def user_index(request):
+	
+	if not request.user.is_authenticated:
+		print('Am i here and not authenticated?????')
+		return render(request, "users/login.html", {'message':None})
+
+	context = {'user': request.user}
+	print('or Am i here and authenticated?????')
+	return render(request, "users/user.html", context)
+
+def login_view(request):
+	username = request.POST["username"]
+	password = request.POST["password"]
+
+	user = authenticate(request, username=username, password=password)
+	if user is not None:
+		login(request, user)
+		return HttpResponseRedirect(reverse("user_index"))
+	else:
+		return render(request, 'users/login.html',{'message': 'invalid credential'})
+
+def logout_view(request):
+	logout(request)
+	return render(request, 'users/login.html', {'message':'Logged out'})
