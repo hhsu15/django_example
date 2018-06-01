@@ -52,3 +52,18 @@ Django provides UI to manage the models you created.
 $python manage.py createsuperuser
 ```
 * Then you go to '/admin' you will be able to use the UI and manage your models
+
+
+## Create User Login
+Django helps handle the user login. Refer to the code in `view.py`.
+* To manage user account, you can use '/admin' UI or through the code as the following example:
+```python
+from django.contrib.auth.models import User
+
+# create user account
+user = User.objects.create_user('user_name', 'email_address', 'password')
+
+# set user attribute, like first name
+user.first_name = 'Firstname'
+user.save()
+```
