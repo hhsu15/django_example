@@ -13,6 +13,7 @@ class Flight(models.Model):
 	origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name='departures')
 	destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name='arrivals')
 	duration = models.IntegerField()
+	# passengers = models.ManyToManyField(Passenger, blank=True, related_name=passengers)
 
 	def __str__(self):
 		return "id: {} - From {} to {}. Duration:{}".format(self.id, self.origin, self.destination, self.duration)

@@ -18,12 +18,9 @@
 	<form action="{% url 'login' %}" method='post'>
 		{% csrf_token %}
 
-		<input name='username' type='text'>
+		<input name='username' type='text', autofocus placeholder="Enter your username">
 		<input name='password' type='password'>
 		<input type='submit' value='Login'>
 	</form>
-
-
-
 
 {% endblock %}
