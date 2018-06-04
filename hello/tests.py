@@ -4,12 +4,12 @@ from selenium import webdriver
 
 
 # set up the chromedriver path - shold be an easier way
-chromeoptions = webdriver.ChromeOptions()
-pref = {'download.default_directory':'/Users/jessicatung'}
-chromeoptions.add_experimental_option('prefs', pref)
-chromedriver = '/Users/jessicatung/chromedriver'
-driver = webdriver.Chrome(executable_path = chromedriver, chrome_options=chromeoptions)
-
+# chromeoptions = webdriver.ChromeOptions()
+# pref = {'download.default_directory':'/Users/jessicatung'}
+# chromeoptions.add_experimental_option('prefs', pref)
+chromedriver = './chromedriver'
+driver = webdriver.Chrome(executable_path = chromedriver)
+																																																																																																																																																																									
 # Create your tests here.
 def file_uri(filename):
 	"""return url for file"""
