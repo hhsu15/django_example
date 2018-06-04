@@ -8,7 +8,7 @@ from selenium import webdriver
 # pref = {'download.default_directory':'/Users/jessicatung'}
 # chromeoptions.add_experimental_option('prefs', pref)
 chromedriver = './chromedriver'
-driver = webdriver.Chrome(executable_path = chromedriver)
+driver = webdriver.Chrome(executable_path=chromedriver)
 																																																																																																																																																																									
 # Create your tests here.
 def file_uri(filename):
