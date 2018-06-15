@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hhsu15/django_example.png?branch=master)](https://travis-ci.org/hhsu15/django_example)
+
 # django_example
 Example how to use django step by step 
 
