@@ -6,7 +6,7 @@ Example how to use django step by step
 ## To get started
 Create a project called mysite
 ```bash
-$django-admin start project mysite
+$django-admin startproject mysite
 ```
 Create an app called hello
 ```bash
